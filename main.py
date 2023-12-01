@@ -14,7 +14,7 @@ def check_exists(var):
         print('check_exists ok')
         return
     else:
-        raise NewException(f"Variable nicht definiert")
+        raise Exception(f"Variable nicht definiert")
 
 def check_string(var):
     if isinstance(var, str):
