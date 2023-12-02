@@ -29,14 +29,14 @@ def part_two(file):
     for line in lines_of_file(file):
         game, game_results = line.split(':')
         game_result = game_results.split(';')
+        product = 1
         minimal_cubes = {'red': 1, 'green': 1, 'blue': 1}
         for result in game_result:
             for color, maximum in colors.items():
                 color_results = re.findall(f'[0-9]* {color}', result)
-                color_sum = sum([int(res.replace(f' {color}', '')) for res  in color_results])
+                color_sum = sum([int(res.replace(f' {color}', '')) for res in color_results])
                 if color_sum > minimal_cubes[color]:
                     minimal_cubes[color] = color_sum
-        product = 1
         for value in minimal_cubes.values():
             product *= value
         res += product

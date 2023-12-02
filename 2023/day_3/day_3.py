@@ -15,11 +15,11 @@ def part_two(file):
 
 
 if __name__ == '__main__':
-    res = part_one('day_x_input_ex.txt')
+    res = part_one('day_3_input_ex.txt')
     print(f"Beispiel 1: {res}")
-    res = part_one('day_x_input.txt')
+    res = part_one('day_3_input.txt')
     print(f"Ergebnis 1: {res}")
-    res = part_two('day_x_input_ex.txt')
+    res = part_two('day_3_input_ex.txt')
     print(f"Beispiel 2: {res}")
-    res = part_two('day_x_input.txt')
+    res = part_two('day_3_input.txt')
     print(f"Ergebnis 2: {res}")
