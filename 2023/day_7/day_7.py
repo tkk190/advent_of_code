@@ -1,89 +1,8 @@
 from utils import lines_of_file
 from itertools import groupby
 
-cards = {
-    'A': '13',
-    'K': '12',
-    'Q': '11',
-    'J': '10',
-    'T': '09',
-    '9': '08',
-    '8': '07',
-    '7': '06',
-    '6': '05',
-    '5': '04',
-    '4': '03',
-    '3': '02',
-    '2': '01'
-}
-cards_b = {
-    'A': '13',
-    'K': '12',
-    'Q': '11',
-    'T': '10',
-    '9': '09',
-    '8': '08',
-    '7': '07',
-    '6': '06',
-    '5': '05',
-    '4': '04',
-    '3': '03',
-    '2': '02',
-    'J': '01'
-}
-
-# def part_one(file):
-#     res = 0
-#     categories = {
-#         'five_of_a_kind': [],
-#         'four_of_a_kind': [],
-#         'full_house': [],
-#         'three_of_a_kind': [],
-#         'two_pair': [],
-#         'one_pair': [],
-#         'high_card': [],
-#     }
-#     for line in lines_of_file(file):
-#         # print(line)
-#         # kategorisieren
-#         hand, value = line.split(' ')
-#         value = int(value)
-#         grouped_hand = sorted([len(list(g)) for k, g in groupby(sorted(hand))], reverse=True)
-#         # print(grouped_hand)
-#         if grouped_hand[0] == 5:
-#             categories['five_of_a_kind'].append((hand, value))
-#         elif grouped_hand[0] == 4:
-#             categories['four_of_a_kind'].append((hand, value))
-#         elif grouped_hand[0] == 3 and grouped_hand[1] == 2:
-#             categories['full_house'].append((hand, value))
-#         elif grouped_hand[0] == 3:
-#             categories['three_of_a_kind'].append((hand, value))
-#         elif grouped_hand[0] == 2 and grouped_hand[1] == 2:
-#             categories['two_pair'].append((hand, value))
-#         elif grouped_hand[0] == 2:
-#             categories['one_pair'].append((hand, value))
-#         elif grouped_hand[0] == 1:
-#             categories['high_card'].append((hand, value))
-#         else:
-#             raise Exception('keine Zuordnung gefunden')
-#
-#     # kategorien nach wert sortieren
-#     values = []
-#     for category_name, category in categories.items():
-#         new_category = {}
-#         for line in category:
-#             hand, value = line
-#             key = ''.join([cards[letter] for letter in hand])
-#             new_category[key] = value
-#         # print(category_name, new_category)
-#         sorted_new_category = dict(sorted(new_category.items(), reverse=True))
-#         # print(category_name, sorted_new_category)
-#         values += [c for c in sorted_new_category.values()]
-#     values.reverse()
-#     # print(f"{values=}")
-#     res = sum([(idx + 1) * v for idx, v in enumerate(values)])
-#     # berechnung
-#     return res
+cards = {'A': '13', 'K': '12', 'Q': '11', 'J': '10', 'T': '09', '9': '08', '8': '07', '7': '06', '6': '05', '5': '04', '4': '03', '3': '02', '2': '01'}
+cards_b = {'A': '13', 'K': '12', 'Q': '11', 'T': '10', '9': '09', '8': '08', '7': '07', '6': '06', '5': '05', '4': '04', '3': '03', '2': '02', 'J': '01'}
 
 def part_one(file):
     values = {}
@@ -167,10 +86,6 @@ def part_two(file):
         values += [c for c in sorted_new_category.values()]
     values.reverse()
     return sum([(idx + 1) * v for idx, v in enumerate(values)])
-
-
-
-
 
 if __name__ == '__main__':
     res = part_one('day_7_input_ex.txt')
